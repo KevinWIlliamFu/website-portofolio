@@ -162,6 +162,7 @@
             border-radius: 6px;
             transition: all 0.3s ease;
             cursor: pointer;
+            white-space: nowrap;
         }
         
         .nav-tab:hover {
@@ -212,15 +213,59 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Mobile specific styles */
+        @media (max-width: 640px) {
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .header-bg {
+                padding-top: 16px;
+            }
+            
+            .nav-tab {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+            
+            .section-content {
+                padding: 0 8px;
+            }
+            
+            .card {
+                padding: 12px;
+            }
+            
+            .timeline-item {
+                padding-left: 24px;
+            }
+            
+            .timeline-dot {
+                width: 10px;
+                height: 10px;
+            }
+            
+            .icon-box {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .social-icon {
+                width: 32px;
+                height: 32px;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-100">
-    <div class="max-w-4xl mx-auto my-8 bg-white shadow-lg rounded-lg overflow-hidden fade-in">
+    <div class="max-w-4xl mx-auto my-4 md:my-8 bg-white shadow-lg rounded-lg overflow-hidden fade-in">
         <!-- Profile Photo Section -->
         <div class="relative">
-            <div class="h-32 bg-gradient-to-r from-gray-800 to-gray-600"></div>
-            <div class="absolute -bottom-16 left-8">
-                <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
+            <div class="h-24 md:h-32 bg-gradient-to-r from-gray-800 to-gray-600"></div>
+            <div class="absolute -bottom-12 md:-bottom-16 left-4 md:left-8">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-lg">
                     <img 
                         src="https://media.discordapp.net/attachments/766676518587727962/1378683174887886920/PROFILE.jpg?ex=683d7e43&is=683c2cc3&hm=abe43fc4dc53c238650de20dd44cf198b85c48dc9d5f541554e00db6ace7e223&=&format=webp&width=540&height=540" 
                         alt="Profile Photo" 
@@ -231,14 +276,14 @@
         </div>
         
         <!-- Header -->
-        <div class="header-bg pt-20 px-8 pb-4 text-gray-900">
+        <div class="header-bg pt-16 md:pt-20 px-4 md:px-8 pb-4 text-gray-900">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <div class="slide-up">
-                    <h1 class="text-3xl font-bold mb-1">KEVIN WILLIAM</h1>
-                    <p class="text-gray-600 font-medium">Finance & Business Strategist</p>
+                    <h1 class="text-2xl md:text-3xl font-bold mb-1">KEVIN WILLIAM</h1>
+                    <p class="text-sm md:text-base text-gray-600 font-medium">Finance & Business Strategist</p>
                 </div>
-                <div class="mt-4 md:mt-0 text-right slide-up delay-1">
-                    <div class="flex space-x-3 justify-end mb-2">
+                <div class="mt-2 md:mt-0 text-left md:text-right slide-up delay-1">
+                    <div class="flex space-x-2 md:space-x-3 justify-start md:justify-end mb-2">
                         <a href="mailto:vinwill310805@gmail.com" class="social-icon hover-scale">
                             <i class="fas fa-envelope"></i>
                         </a>
@@ -249,109 +294,108 @@
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
-                    <p class="text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i> Sentul, Bogor, Indonesia</p>
-                    <p class="text-gray-600"><i class="fas fa-phone mr-2"></i> 089501807575</p>
+                    <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-map-marker-alt mr-1 md:mr-2"></i> Sentul, Bogor, Indonesia</p>
+                    <p class="text-xs md:text-sm text-gray-600"><i class="fas fa-phone mr-1 md:mr-2"></i> 089501807575</p>
                 </div>
             </div>
             
             <!-- Navigation Tabs -->
-            <div class="flex overflow-x-auto mt-6 pb-2 space-x-2 scrollbar-hide">
+            <div class="flex overflow-x-auto mt-4 md:mt-6 pb-2 space-x-1 md:space-x-2 scrollbar-hide">
                 <div class="nav-tab active hover-scale" data-target="profile">
-                    <i class="fas fa-user mr-2"></i> Profile
+                    <i class="fas fa-user mr-1 md:mr-2"></i> Profile
                 </div>
                 <div class="nav-tab hover-scale" data-target="about">
-                    <i class="fas fa-info-circle mr-2"></i> About
+                    <i class="fas fa-info-circle mr-1 md:mr-2"></i> About
                 </div>
                 <div class="nav-tab hover-scale" data-target="experience">
-                    <i class="fas fa-briefcase mr-2"></i> Experience
+                    <i class="fas fa-briefcase mr-1 md:mr-2"></i> Experience
                 </div>
                 <div class="nav-tab hover-scale" data-target="expertise">
-                    <i class="fas fa-tools mr-2"></i> Expertise
+                    <i class="fas fa-tools mr-1 md:mr-2"></i> Expertise
                 </div>
             </div>
             <div class="header-divider mt-2 slide-up delay-2"></div>
         </div>
         
         <!-- Main Content -->
-        <div class="p-8">
+        <div class="p-4 md:p-8">
             <!-- Profile Section (Default Active) -->
             <div id="profile" class="section-content active">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <div class="card p-6 hover-scale">
-                        <div class="flex items-center mb-3">
-                            <div class="icon-box mr-3">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+                    <div class="card p-4 md:p-6 hover-scale">
+                        <div class="flex items-center mb-2 md:mb-3">
+                            <div class="icon-box mr-2 md:mr-3">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <h3 class="font-semibold text-gray-800">Education</h3>
+                            <h3 class="text-sm md:text-base font-semibold text-gray-800">Education</h3>
                         </div>
-                        <p class="text-gray-700">BCA Learning Institute</p>
-                        <p class="text-sm text-gray-500">Finance & Business Studies</p>
+                        <p class="text-xs md:text-sm text-gray-700">BCA Learning Institute</p>
+                        <p class="text-xs text-gray-500">Finance & Business Studies</p>
                     </div>
-                    <div class="card p-6 hover-scale">
-                        <div class="flex items-center mb-3">
-                            <div class="icon-box mr-3">
+                    <div class="card p-4 md:p-6 hover-scale">
+                        <div class="flex items-center mb-2 md:mb-3">
+                            <div class="icon-box mr-2 md:mr-3">
                                 <i class="fas fa-language"></i>
                             </div>
-                            <h3 class="font-semibold text-gray-800">Languages</h3>
+                            <h3 class="text-sm md:text-base font-semibold text-gray-800">Languages</h3>
                         </div>
-                        <p class="text-gray-700">Indonesian (Native)</p>
-                        <p class="text-gray-700">English (Professional)</p>
+                        <p class="text-xs md:text-sm text-gray-700">Indonesian (Native)</p>
+                        <p class="text-xs md:text-sm text-gray-700">English (Professional)</p>
                     </div>
-                    <div class="card p-6 hover-scale">
-                        <div class="flex items-center mb-3">
-                            <div class="icon-box mr-3">
+                    <div class="card p-4 md:p-6 hover-scale">
+                        <div class="flex items-center mb-2 md:mb-3">
+                            <div class="icon-box mr-2 md:mr-3">
                                 <i class="fas fa-star"></i>
                             </div>
-                            <h3 class="font-semibold text-gray-800">Interests</h3>
+                            <h3 class="text-sm md:text-base font-semibold text-gray-800">Interests</h3>
                         </div>
-                        <p class="text-gray-700">Financial Markets</p>
-                        <p class="text-gray-700">Investment Strategies</p>
+                        <p class="text-xs md:text-sm text-gray-700">Financial Markets</p>
+                        <p class="text-xs md:text-sm text-gray-700">Investment Strategies</p>
                     </div>
                 </div>
             </div>
             
             <!-- About Section -->
             <div id="about" class="section-content">
-                <div class="mb-8 slide-up delay-1">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <div class="icon-box mr-3">
+                <div class="mb-6 md:mb-8 slide-up delay-1">
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-3 md:mb-4 flex items-center">
+                        <div class="icon-box mr-2 md:mr-3">
                             <i class="fas fa-user-tie text-gray-700"></i>
                         </div>
                         PROFIL PROFESIONAL
                     </h2>
-                    <div class="section-divider mb-4"></div>
-                    <p class="text-gray-700 leading-relaxed">
+                    <div class="section-divider mb-3 md:mb-4"></div>
+                    <p class="text-xs md:text-sm text-gray-700 leading-relaxed">
                         Sebagai individu yang berdedikasi di dunia finansial dan bisnis, saya percaya bahwa perencanaan keuangan yang strategis harus berlandaskan prinsip yang kokoh dan bertanggung jawab. Dengan keterampilan analitis dan komunikasi yang kuat, saya siap memberikan solusi terbaik bagi klien dan perusahaan.
                     </p>
-                    <p class="text-gray-700 leading-relaxed mt-4">
+                    <p class="text-xs md:text-sm text-gray-700 leading-relaxed mt-3 md:mt-4">
                         Saya menggabungkan pengalaman kewirausahaan dengan pengetahuan finansial yang mendalam untuk memberikan solusi optimal. Passion saya terletak pada strategi investasi, manajemen kekayaan, dan pengembangan bisnis dengan fokus pada pertumbuhan berkelanjutan jangka panjang.
                     </p>
                 </div>
-
             </div>
             
             <!-- Experience Section -->
             <div id="experience" class="section-content">
-                <div class="mb-8 slide-up delay-2">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <div class="icon-box mr-3">
+                <div class="mb-6 md:mb-8 slide-up delay-2">
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-3 md:mb-4 flex items-center">
+                        <div class="icon-box mr-2 md:mr-3">
                             <i class="fas fa-briefcase text-gray-700"></i>
                         </div>
                         PENGALAMAN PROFESIONAL
                     </h2>
-                    <div class="section-divider mb-4"></div>
+                    <div class="section-divider mb-3 md:mb-4"></div>
                     
-                    <div class="space-y-6">
+                    <div class="space-y-4 md:space-y-6">
                         <!-- Experience 1 -->
-                        <div class="relative pl-8 timeline-item card hover-scale">
+                        <div class="relative pl-6 md:pl-8 timeline-item card hover-scale">
                             <div class="absolute left-0 top-0 timeline-dot"></div>
-                            <div class="p-4">
+                            <div class="p-3 md:p-4">
                                 <div class="flex flex-col md:flex-row justify-between">
-                                    <h3 class="text-lg font-semibold text-gray-800">Founder & Business Owner</h3>
-                                    <p class="text-gray-600 font-medium">Feb 2025 - Present</p>
+                                    <h3 class="text-base md:text-lg font-semibold text-gray-800">Founder & Business Owner</h3>
+                                    <p class="text-xs md:text-sm text-gray-600 font-medium">Feb 2025 - Present</p>
                                 </div>
-                                <p class="text-gray-500 italic mb-2">Gegaiaan | Indonesia</p>
-                                <ul class="list-disc pl-5 text-gray-700 space-y-1 mt-2">
+                                <p class="text-xs md:text-sm text-gray-500 italic mb-1 md:mb-2">Gegaiaan | Indonesia</p>
+                                <ul class="list-disc pl-4 md:pl-5 text-xs md:text-sm text-gray-700 space-y-1 mt-1 md:mt-2">
                                     <li>Membangun dan mengembangkan brand fashion dengan konsep streetwear oversized berkualitas tinggi dengan harga terjangkau</li>
                                     <li>Bertanggung jawab atas penentuan konsep, strategi pemasaran, desain produk, serta pengelolaan produksi dan distribusi</li>
                                     <li>Mengelola cash flow, budgeting, serta perencanaan ekspansi bisnis secara strategis</li>
@@ -361,15 +405,15 @@
                         </div>
                         
                         <!-- Experience 2 -->
-                        <div class="relative pl-8 timeline-item card hover-scale">
+                        <div class="relative pl-6 md:pl-8 timeline-item card hover-scale">
                             <div class="absolute left-0 top-0 timeline-dot"></div>
-                            <div class="p-4">
+                            <div class="p-3 md:p-4">
                                 <div class="flex flex-col md:flex-row justify-between">
-                                    <h3 class="text-lg font-semibold text-gray-800">Financial Enthusiast & Researcher</h3>
-                                    <p class="text-gray-600 font-medium">Jan 2023 - Present</p>
+                                    <h3 class="text-base md:text-lg font-semibold text-gray-800">Financial Enthusiast & Researcher</h3>
+                                    <p class="text-xs md:text-sm text-gray-600 font-medium">Jan 2023 - Present</p>
                                 </div>
-                                <p class="text-gray-500 italic mb-2">Independent</p>
-                                <ul class="list-disc pl-5 text-gray-700 space-y-1 mt-2">
+                                <p class="text-xs md:text-sm text-gray-500 italic mb-1 md:mb-2">Independent</p>
+                                <ul class="list-disc pl-4 md:pl-5 text-xs md:text-sm text-gray-700 space-y-1 mt-1 md:mt-2">
                                     <li>Memiliki pemahaman cepat dalam menganalisis konsep finansial, investasi, dan perencanaan keuangan, didukung oleh riset mandiri dan pembelajaran aktif</li>
                                     <li>Sedang menjalankan Beasiswa BCA jurusan Bisnis dan Perbankan, berhasil mengikuti program pembelajaran dengan standar tinggi dan mempertahankan IPK sempurna</li>
                                     <li>Aktif mempelajari dan menerapkan prinsip wealth management, estate planning, serta strategi investasi berbasis nilai</li>
@@ -381,24 +425,24 @@
                 </div>
                 
                 <!-- Education -->
-                <div class="mb-8 slide-up delay-3">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <div class="icon-box mr-3">
+                <div class="mb-6 md:mb-8 slide-up delay-3">
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-3 md:mb-4 flex items-center">
+                        <div class="icon-box mr-2 md:mr-3">
                             <i class="fas fa-graduation-cap text-gray-700"></i>
                         </div>
                         PENDIDIKAN
                     </h2>
-                    <div class="section-divider mb-4"></div>
+                    <div class="section-divider mb-3 md:mb-4"></div>
                     
-                    <div class="relative pl-8 timeline-item card hover-scale">
+                    <div class="relative pl-6 md:pl-8 timeline-item card hover-scale">
                         <div class="absolute left-0 top-0 timeline-dot"></div>
-                        <div class="p-4">
+                        <div class="p-3 md:p-4">
                             <div class="flex flex-col md:flex-row justify-between">
-                                <h3 class="text-lg font-semibold text-gray-800">BCA Learning Institute</h3>
-                                <p class="text-gray-600 font-medium">2023 - Present</p>
+                                <h3 class="text-base md:text-lg font-semibold text-gray-800">BCA Learning Institute</h3>
+                                <p class="text-xs md:text-sm text-gray-600 font-medium">2023 - Present</p>
                             </div>
-                            <p class="text-gray-500 italic mb-2">Finance & Business Studies</p>
-                            <ul class="list-disc pl-5 text-gray-700 space-y-1 mt-2">
+                            <p class="text-xs md:text-sm text-gray-500 italic mb-1 md:mb-2">Finance & Business Studies</p>
+                            <ul class="list-disc pl-4 md:pl-5 text-xs md:text-sm text-gray-700 space-y-1 mt-1 md:mt-2">
                                 <li>Penerima Beasiswa BCA yang prestisius</li>
                                 <li>Mempertahankan IPK sempurna dalam program akademik intensif</li>
                                 <li>Spesialisasi dalam studi keuangan, investasi, dan strategi bisnis</li>
@@ -411,48 +455,48 @@
             
             <!-- Expertise Section -->
             <div id="expertise" class="section-content">
-                <div class="mb-8 slide-up delay-4">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <div class="icon-box mr-3">
+                <div class="mb-6 md:mb-8 slide-up delay-4">
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-3 md:mb-4 flex items-center">
+                        <div class="icon-box mr-2 md:mr-3">
                             <i class="fas fa-tools text-gray-700"></i>
                         </div>
                         KEUNGGULAN & KEBAKATAN
                     </h2>
-                    <div class="section-divider mb-4"></div>
+                    <div class="section-divider mb-3 md:mb-4"></div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <div>
-                            <h3 class="font-medium text-gray-800 mb-2">Analisis Keuangan & Strategi Investasi</h3>
+                            <h3 class="text-xs md:text-sm font-medium text-gray-800 mb-1 md:mb-2">Analisis Keuangan & Strategi Investasi</h3>
                             <div class="skill-bar">
                                 <div class="skill-progress progress-animate" style="width: 90%"></div>
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-medium text-gray-800 mb-2">Riset Pesaing & Pasar</h3>
+                            <h3 class="text-xs md:text-sm font-medium text-gray-800 mb-1 md:mb-2">Riset Pesaing & Pasar</h3>
                             <div class="skill-bar">
                                 <div class="skill-progress progress-animate" style="width: 85%"></div>
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-medium text-gray-800 mb-2">Pengembangan Bisnis & Strategi Brand</h3>
+                            <h3 class="text-xs md:text-sm font-medium text-gray-800 mb-1 md:mb-2">Pengembangan Bisnis & Strategi Brand</h3>
                             <div class="skill-bar">
                                 <div class="skill-progress progress-animate" style="width: 88%"></div>
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-medium text-gray-800 mb-2">Manajemen Arus Kas & Kekayaan</h3>
+                            <h3 class="text-xs md:text-sm font-medium text-gray-800 mb-1 md:mb-2">Manajemen Arus Kas & Kekayaan</h3>
                             <div class="skill-bar">
                                 <div class="skill-progress progress-animate" style="width: 92%"></div>
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-medium text-gray-800 mb-2">Wawasan Kewirausahaan</h3>
+                            <h3 class="text-xs md:text-sm font-medium text-gray-800 mb-1 md:mb-2">Wawasan Kewirausahaan</h3>
                             <div class="skill-bar">
                                 <div class="skill-progress progress-animate" style="width: 87%"></div>
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-medium text-gray-800 mb-2">Pengambilan Keputusan Strategis</h3>
+                            <h3 class="text-xs md:text-sm font-medium text-gray-800 mb-1 md:mb-2">Pengambilan Keputusan Strategis</h3>
                             <div class="skill-bar">
                                 <div class="skill-progress progress-animate" style="width: 89%"></div>
                             </div>
@@ -461,24 +505,24 @@
                 </div>
                 
                 <!-- Certifications -->
-                <div class="mb-8 slide-up delay-1">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <div class="icon-box mr-3">
+                <div class="mb-6 md:mb-8 slide-up delay-1">
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-3 md:mb-4 flex items-center">
+                        <div class="icon-box mr-2 md:mr-3">
                             <i class="fas fa-award text-gray-700"></i>
                         </div>
                         SERTIFIKASI
                     </h2>
-                    <div class="section-divider mb-4"></div>
+                    <div class="section-divider mb-3 md:mb-4"></div>
                     
-                    <div class="card p-4 hover-scale">
+                    <div class="card p-3 md:p-4 hover-scale">
                         <div class="flex items-start">
-                            <div class="icon-box mr-4">
+                            <div class="icon-box mr-3 md:mr-4">
                                 <i class="fas fa-certificate text-gray-700"></i>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-gray-800">Program Beasiswa BCA</h3>
-                                <p class="text-gray-500">Studi Bisnis & Perbankan</p>
-                                <p class="text-sm text-gray-400 mt-1">Mempertahankan IPK sempurna dalam program akademik yang ketat</p>
+                                <h3 class="text-sm md:text-base font-semibold text-gray-800">Program Beasiswa BCA</h3>
+                                <p class="text-xs md:text-sm text-gray-500">Studi Bisnis & Perbankan</p>
+                                <p class="text-xs text-gray-400 mt-1">Mempertahankan IPK sempurna dalam program akademik yang ketat</p>
                             </div>
                         </div>
                     </div>
@@ -486,32 +530,32 @@
                 
                 <!-- Additional Information -->
                 <div class="slide-up delay-2">
-                    <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-                        <div class="icon-box mr-3">
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-800 mb-3 md:mb-4 flex items-center">
+                        <div class="icon-box mr-2 md:mr-3">
                             <i class="fas fa-star text-gray-700"></i>
                         </div>
                         INFORMASI TAMBAHAN
                     </h2>
-                    <div class="section-divider mb-4"></div>
+                    <div class="section-divider mb-3 md:mb-4"></div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="card p-4 hover-scale">
-                            <h3 class="font-semibold text-gray-800 mb-2 flex items-center">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                        <div class="card p-3 md:p-4 hover-scale">
+                            <h3 class="text-sm md:text-base font-semibold text-gray-800 mb-1 md:mb-2 flex items-center">
                                 <div class="icon-box mr-2">
                                     <i class="fas fa-language text-gray-700"></i>
                                 </div>
                                 Bahasa
                             </h3>
-                            <p class="text-gray-700">Bahasa Indonesia (Asli), Inggris (Kemampuan Profesional)</p>
+                            <p class="text-xs md:text-sm text-gray-700">Bahasa Indonesia (Asli), Inggris (Kemampuan Profesional)</p>
                         </div>
-                        <div class="card p-4 hover-scale">
-                            <h3 class="font-semibold text-gray-800 mb-2 flex items-center">
+                        <div class="card p-3 md:p-4 hover-scale">
+                            <h3 class="text-sm md:text-base font-semibold text-gray-800 mb-1 md:mb-2 flex items-center">
                                 <div class="icon-box mr-2">
                                     <i class="fas fa-users text-gray-700"></i>
                                 </div>
                                 Minat
                             </h3>
-                            <p class="text-gray-700">Pasar Keuangan, Strategi Investasi, Inovasi Bisnis, Kewirausahaan</p>
+                            <p class="text-xs md:text-sm text-gray-700">Pasar Keuangan, Strategi Investasi, Inovasi Bisnis, Kewirausahaan</p>
                         </div>
                     </div>
                 </div>
@@ -519,9 +563,9 @@
         </div>
         
         <!-- Footer -->
-        <div class="bg-gray-50 p-4 text-center text-gray-500 text-sm slide-up delay-3">
+        <div class="bg-gray-50 p-3 md:p-4 text-center text-xs md:text-sm text-gray-500 slide-up delay-3">
             <p>"Perencanaan keuangan strategis adalah fondasi kesuksesan bisnis yang berkelanjutan."</p>
-            <p class="mt-2">Kevin William • Sentul, Bogor • 089501807575 • vinwill310805@gmail.com</p>
+            <p class="mt-1 md:mt-2">Kevin William • Sentul, Bogor • 089501807575 • vinwill310805@gmail.com</p>
         </div>
     </div>
 
@@ -585,6 +629,16 @@
                     document.getElementById(target).classList.add('active');
                 });
             });
+
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
         });
     </script>
 </body>
